@@ -34,5 +34,8 @@ def test_ollama_health_check():
     client = OllamaClient()
     res = client.check_health()
     assert res["status"] in ["healthy", "unavailable"]
-    assert "models" in res
-    assert isinstance(res["models"], list)
+    if res["status"] == "healthy":
+        assert "models" in res
+        assert isinstance(res["models"], list)
+    else:
+        assert "error" in res

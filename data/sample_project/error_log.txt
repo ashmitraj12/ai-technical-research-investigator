@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "data/sample_project/app/main.py", line 2, in <module>
+    from app.models import UserCreate
+  File "data/sample_project/app/models.py", line 8, in <module>
+    class UserCreate(BaseModel):
+  File "data/sample_project/app/models.py", line 13, in UserCreate
+    @validator('username')
+     ^^^^^^^^^^^^^^^^^^^^^
+pydantic.errors.PydanticUserError: `validator` is deprecated in Pydantic V2, use `field_validator` instead.
